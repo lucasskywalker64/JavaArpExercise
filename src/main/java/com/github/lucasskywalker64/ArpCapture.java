@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class ArpCapture {
 
-    private static final Logger log = LoggerFactory.getLogger(ArpCapture.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(ArpCapture.class.getName());
     private static final Map<InetAddress, MacAddress> ARP_TABLE = new HashMap<>();
     // Snapshot length, which is the number of bytes captured for each packet.
     private static final int SNAP_LENGTH = 65536;
@@ -32,7 +32,7 @@ public class ArpCapture {
             // User selects interface through console
             nif = new NifSelector().selectNetworkInterface();
         } catch (IOException e) {
-            log.error(e.getMessage());
+            LOG.error(e.getMessage());
         }
         if (nif == null)
             return;
@@ -50,7 +50,7 @@ public class ArpCapture {
             // Iterate over all IP-MAC pairs and print
             ARP_TABLE.forEach((k, v) -> System.out.println(k.getHostAddress() + "\t\t" + v));
         } catch (NotOpenException | InterruptedException | PcapNativeException e) {
-            log.error(e.getMessage());
+            LOG.error(e.getMessage());
         }
     }
 }
