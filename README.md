@@ -1,1 +1,1 @@
-This repo is part of my lab exercises for my Uni networking course.
+This repo is part of my lab exercises for my Uni Applied Network Security course.
