@@ -26,6 +26,10 @@ public class ArpCapture {
     private static final int READ_TIMEOUT_MS = 100;
     private static final int PACKET_COUNT = 500;
 
+    /**
+     * Main method for capturing ARP packets.
+     * @param args not used
+     */
     public static void main(String[] args) {
         PcapNetworkInterface nif = null;
         try {
